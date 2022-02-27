@@ -16,6 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name',256);
+            $table->string('form',128);
+            $table->longText('description')->default("");
+            $table->longText('restriction')->default("");
+            $table->boolean('FK1')->default(false);
+            $table->boolean('FK2')->default(false);
+            $table->boolean('FK3')->default(false);
             $table->bigInteger('price');
             $table->timestamps();
         });
