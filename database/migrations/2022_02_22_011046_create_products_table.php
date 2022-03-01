@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->boolean('FK2')->default(false);
             $table->boolean('FK3')->default(false);
             $table->bigInteger('price');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
     }
