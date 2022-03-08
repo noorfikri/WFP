@@ -93,4 +93,12 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function test1(){
+        $result=DB::table('products')
+        ->where('price','>',200000)
+        ->get();
+
+        dd($result);
+    }
 }
