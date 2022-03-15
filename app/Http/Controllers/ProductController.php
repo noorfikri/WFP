@@ -58,6 +58,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        $data=$product;
+        return view('products.show',compact('data'));
     }
 
     /**
@@ -95,6 +97,14 @@ class ProductController extends Controller
     }
 
     public function test1(){
+        $result=DB::table('products')
+        ->where('price','>',200000)
+        ->get();
+
+        dd($result);
+    }
+
+    public function test2(){
         $result=DB::table('products')
         ->where('price','>',200000)
         ->get();
